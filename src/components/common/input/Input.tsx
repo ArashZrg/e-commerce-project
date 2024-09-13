@@ -1,7 +1,8 @@
 import React, {FC, ChangeEvent} from "react";
 
 interface IInputProps {
-  className?: string;
+  //inputStyle?: string;
+  labelStyle?: string;
   type?: string;
   title?: string;
   placeholder?: string;
@@ -13,29 +14,30 @@ interface IInputProps {
 }
 
 const Input:FC<IInputProps> = ({
-  className,
+  labelStyle,
+  //inputStyle,
   type = 'text',
   title,
   placeholder,
-  value,
-  htmlFor,
+  //value,
+  //htmlFor,
   label,
-  id,
+  //id,
   onChange,
 }) => {
   return (
     <div>
-      <label htmlFor={htmlFor}
-      className={className}>
+      <label htmlFor='textInputID'
+      className={labelStyle}>
         {label}
       </label>
       <input
-        className={`input ${className}`}
+        className='w-[531px] h-[74px] border px-[9px] pt-[10px] pb-[11px] bg-[#141516] focus:border-[#078DEE] disabled:bg-[#3f4043] rounded-md'
         type={type}
         title={title}
         placeholder={placeholder}
-        value={value}
-        id={id}
+        //value={value}
+        id='textInputID'
         onChange={onChange}
       />
     </div>
