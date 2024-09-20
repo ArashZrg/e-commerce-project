@@ -30,15 +30,15 @@ const ProductCard: React.FC<IProductCardProps> = ({
   };
 
   return (
-    <div className="relative flex flex-col max-w-[40.4rem] max-h-[38.6rem] gap-4 justify-between items-center">
+    <div className="relative bg-white flex flex-col max-w-[40.4rem] max-h-[38.6rem] justify-between items-center">
       <img className="relative max-w-[40.4rem] max-h-[34.6rem] rounded-md" src={src} alt={alt}
       loading={loading}/>
       <div className="absolute top-6 right-6" onClick={handleFavoriteClick}>{favorite ? <IoMdHeart className="text-[#DB2777]"/> : <IoMdHeartEmpty /> }</div>
       <div className="flex flex-row justify-between items-center w-full h-[2.4rem]">
+        <p className={productTitleStyle}>{productTitle}</p>
         <Badge padding={padding} fontSize={fontSize}>
           {badgeTitle}
         </Badge>
-        <p className={productTitleStyle}>{productTitle}</p>
       </div>
     </div>
   );

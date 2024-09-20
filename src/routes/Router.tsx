@@ -7,7 +7,6 @@ import {
   CheckoutPage,
   ProfilePage,
   FavoritesPage,
-  ShoppingProgressThirdStepPage,
   CartPage,
   MyOrdersPage,
   DetailsPage,
@@ -69,10 +68,7 @@ const routes = createBrowserRouter([
         path: "/details",
         element: <DetailsPage />,
       },
-      {
-        path: "/progress",
-        element: <ShoppingProgressThirdStepPage />,
-      },
+      
     ],
   },
 ]);
