@@ -1,4 +1,4 @@
-
+import Dashboard from "../../components/dashboard/Dashboard";
 import SpecialProducts from "../../components/dashboard/specialProducts/SpecialProducts";
 const Products=[
   {
@@ -47,13 +47,9 @@ const Products=[
   },
   
 ]
+
 const DashBoardPage = () => {
-  return(
-
-  
-  <SpecialProducts SpecialProducts={Products}/>
-
-  ) 
+  return <Dashboard />;
 };
 
 export default DashBoardPage;

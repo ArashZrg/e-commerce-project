@@ -7,17 +7,13 @@ import { useLocation } from "react-router-dom";
 const AuthenticationPage = () => {
   const location = useLocation();
 
-  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
-
   return (
     <div className="flex">
       <AuthenticationCard>
         {location.pathname === "/login" ? (
-          <LoginForm handleSubmitForm={handleOnSubmit} />
+          <LoginForm />
         ) : location.pathname === "/register" ? (
-          <RegisterForm handleSubmitForm={handleOnSubmit} />
+          <RegisterForm />
         ) : (
           <h1>not found</h1>
         )}

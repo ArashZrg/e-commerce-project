@@ -90,6 +90,14 @@ export default {
           "-webkit-line-clamp": "2",
           "-webkit-box-orient": "vertical",
         },
+
+        ".line-clamp-4": {
+          "text-overflow": "ellipsis",
+          overflow: "hidden",
+          display: "-webkit-box",
+          "-webkit-line-clamp": "4",
+          "-webkit-box-orient": "vertical",
+        },
       });
     },
   ],
