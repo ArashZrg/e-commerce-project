@@ -12,7 +12,7 @@ const Content = ({ children }: IContent) => {
 
   return (
     <section
-      className={`rel w-full bg-base-backgrond min-h-screen transition-width duration-700 ease-in-out ${
+      className={`rel w-full bg-base-backgrond dark:bg-dark-base-background min-h-screen transition-width duration-700 ease-in-out ${
         !expanded ? "mr-32" : "mr-[22rem]"
       }`}
     >

@@ -6,7 +6,7 @@ interface Props {
 
 const Authentication = ({ children }: Props) => {
   return (
-    <div className="bg-[#EEF0F1] flex gap-7 w-full h-screen p-14">
+    <div className=" flex gap-7 w-full min-h-screen p-14">
       {children}
     </div>
   );

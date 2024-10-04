@@ -36,7 +36,7 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
           {label}
         </label>
         <input
-          className={inputStyle}
+          className={`${inputStyle} dark:bg-dark-base-text-field dark:border dark:border-dark-base-text-field-stroke focus:outline-secondary-main`}
           type={type}
           placeholder={placeholder}
           id={id}

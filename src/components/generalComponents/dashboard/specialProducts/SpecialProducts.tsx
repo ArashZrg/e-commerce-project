@@ -15,7 +15,7 @@ const SpecialProducts: React.FC<ISpecialProducts> = ({ SpecialProducts }) => {
     return (
           <div className="flex flex-col gap-y-16">
             <div className="flex justify-between items-center h-28">
-            <p className="font-normal text-[4rem] text-text-primary">
+            <p className="font-normal text-[4rem] text-text-primary dark:text-dark-text-primary">
               محصولات ویژه
             </p>
             <Button

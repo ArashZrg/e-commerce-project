@@ -48,7 +48,7 @@ const RegisterForm = () => {
     <>
       <Toaster />
       <div className="flex flex-col gap-6  w-[53.1rem] h-[35.6rem]">
-        <h1 className="text-black text-[2rem] font-bold">ثبت نام</h1>
+        <h1 className="text-black dark:text-dark-text-primary text-[2rem] font-bold">ثبت نام</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             {...register("name", {

@@ -39,7 +39,7 @@ const LoginForm = () => {
     <>
       <Toaster />
       <div className="flex flex-col gap-8 w-[53.1rem] h-[35.6rem] font-Iran-Yekan">
-        <h1 className="text-text-primary text-[2rem] font-bold">ورود</h1>
+        <h1 className="text-text-primary dark:text-dark-text-primary text-[2rem] font-bold">ورود</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             {...register("email", {

@@ -41,7 +41,7 @@ const TopBox = () => {
                   src={item.src}
                   alt={item.productTitle}
                   productTitle={item.productTitle} 
-                  productTitleStyle="text-text-primary text-[1.1rem] text-normal"
+                  productTitleStyle="text-text-primary dark:text-white text-[1.1rem] text-normal"
                   badgeTitle={item.productPrice}
                   padding="px-2"
                   fontSize="text-[1.1rem]"

@@ -14,10 +14,10 @@ const Favorites : React.FC<IFavoritesProps> = ({favoriteProducts}) => {
     <section className="w-full h-screen grid grid-cols-4 gap-[3.2rem] py-[3.2rem] px-[2.1rem] overflow-y-auto">
         {favoriteProducts.map((favouriteProduct, index) => {
             return (
-                <ProductCard 
+                <ProductCard
                 key={index}
                 productTitle={favouriteProduct.productTitle} 
-                productTitleStyle="text-text-primary text-[1.8rem] text-normal"
+                productTitleStyle="text-text-primary dark:text-white text-[1.8rem] text-normal"
                 badgeTitle={favouriteProduct.badgeTitle}
                 padding="px-2.5"
                 fontSize="text-[1.2rem]"
