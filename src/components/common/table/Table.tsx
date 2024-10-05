@@ -114,7 +114,7 @@ const Table = ({
                       {item[head]}
                     </Badge>
                   ) : head === "نام" ? (
-                    <EditField title={item[head]} type="username" userid={item["ID"]}/>
+                    <EditField title={item[head]}  type="username" userid={item["ID"]}/>
                   ) : head === "ایمیل" ? (
                     <EditField title={item[head]}  type="email" userid={item["ID"]} />
                   ) : 
