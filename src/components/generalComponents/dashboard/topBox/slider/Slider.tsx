@@ -4,9 +4,10 @@ import { FaStar, FaShoppingCart, FaClock, FaBox } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
 
 interface IItem {
+    id: string,
     src: string,
     productTitle: string,
-    productPrice: string,
+    productPrice: number,
     productDescription: string,
 }
 

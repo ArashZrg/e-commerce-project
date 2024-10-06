@@ -2,22 +2,44 @@ import Button from "../button/Button";
 
 interface IStatusProps {
   isNeedButton: boolean;
+  information: IInformation;
+  status: string;
 }
 
-const Status = ({ isNeedButton }: IStatusProps) => {
+interface IInformation {
+  _id: string;
+  name: string;
+  email: string;
+  address: string;
+  shippingPrice: number;
+  taxPrice: number;
+  totalPrice: number;
+}
+
+const Status = ({ isNeedButton, information, status }: IStatusProps) => {
   const infoItems = [
-    { label: "شماره سفارش", value: "۲۹۲۳۹۱۰" },
-    { label: "نام", value: "علی موسوی" },
-    { label: "ایمیل", value: "Robert@gmail.com" },
-    { label: "آدرس", value: "تهران خ آزادی نبش کوچه قنبری پلاک ۱۹۲" },
+    { label: "شماره سفارش", value: information._id },
+    { label: "نام", value: information.name },
+    { label: "ایمیل", value: information.email },
+    { label: "آدرس", value: information.address },
     { label: "روش پرداخت", value: "درگاه پرداخت پاسارگاد" },
   ];
 
+  const formatPrice = (price: number) => {
+    return `${price.toLocaleString()} تومان`;
+  };
+
   const summaryItems = [
-    { label: "قمیت محصولات", value: "100000 تومان" },
-    { label: "هزینه ارسال", value: "100000 تومان" },
-    { label: "مالیات", value: "100000 تومان" },
-    { label: "مبلغ نهایی", value: "100000 تومان" },
+    {
+      label: "قمیت محصولات",
+      value: formatPrice(
+        information.totalPrice -
+          (information.shippingPrice + information.taxPrice)
+      ),
+    },
+    { label: "هزینه ارسال", value: formatPrice(information.shippingPrice) },
+    { label: "مالیات", value: formatPrice(information.taxPrice) },
+    { label: "مبلغ نهایی", value: formatPrice(information.totalPrice) },
   ];
 
   const textStyle = "text-[1.6rem] font-normal text-text-primary py-2";
@@ -34,7 +56,7 @@ const Status = ({ isNeedButton }: IStatusProps) => {
         ))}
       </div>
       <div className="text-[1.6rem] font-bold text-text-primary w-full bg-base-card rounded-md pr-4 py-3">
-        Status
+        {status}
       </div>
       <p className="font-medium text-[2rem] my-4">خلاصه خرید</p>
       {summaryItems.map(({ label, value }) => (

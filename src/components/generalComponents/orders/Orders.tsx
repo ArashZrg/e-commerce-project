@@ -4,6 +4,7 @@ import orderService from "../../../services/orderService";
 import { IUserOrderResponse } from "../../../types/orderTypes";
 import { IAdminOrderResponse } from "../../../types/orderTypes";
 import { isAdmin } from "../../../stores/adminStore";
+import photo from "./iphone-14-pro-model-unselect-gallery-1-202209.png"
 
 interface IOrders {
   [index: string]: string | number | boolean | JSX.Element;
@@ -34,27 +35,29 @@ const Orders : React.FC = () => {
       const response = await orderService.getAllOrdersAdmin();
           newOrder = response.map((order: IAdminOrderResponse) => 
             order.orderItems.map((item) => ({
-              "عکس": "item.image", /// it's just a placeholder should be fix after the API changes. remember to fix the types too (IOrderItemsResponse).
+              "عکس": item.image ? item.image : photo, 
               "نام محصول": item.name,
-              "تاریخ": new Date(order.createdAt).toLocaleDateString(),
-              "کاربر": order.user.username,
-              "قیمت نهایی": order.totalPrice,
+              "تاریخ": new Date(order.createdAt).toLocaleDateString('fa-IR'),
+              "کاربر": order.user ? order.user.username : "Marzi",
+              "قیمت نهایی": order.totalPrice.toLocaleString('fa-IR'),
               "پرداخت": order.isPaid ? "پرداخت شده" : "پرداخت نشده",
               "ارسال": order.isDelivered ? "ارسال شده" : "ارسال نشده",
               "عملیات": "جزئیات",
+              "orderId": order._id,
             }))
           ).flat(); 
     } else {
       const response = await orderService.getAllOrdersMine();
           newOrder= response.map((order: IUserOrderResponse) => 
             order.orderItems.map((item) => ({
-              "عکس": "item.image", /// it's just a placeholder should be fix after the API changes. remember to fix the types too (IOrderItemsResponse).
+              "عکس": item.image ? item.image : photo,
               "نام محصول": item.name,
-              "تاریخ": new Date(order.createdAt).toLocaleDateString(),
-              "قیمت نهایی": order.totalPrice,
+              "تاریخ": new Date(order.createdAt).toLocaleDateString('fa-IR'),
+              "قیمت نهایی": order.totalPrice.toLocaleString('fa-IR'),
               "پرداخت": order.isPaid ? "پرداخت شده" : "پرداخت نشده",
               "ارسال": order.isDelivered ? "ارسال شده" : "ارسال نشده",
               "عملیات": "جزئیات",
+              "orderId": order._id,
             }))
           ).flat();
     }        

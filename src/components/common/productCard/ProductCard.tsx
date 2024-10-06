@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Badge from "../badge/Badge";
 import { IoMdHeart, IoMdHeartEmpty } from "react-icons/io";
-
+import { useFavoritesStore } from "../../../stores/favoritesStore";
+import { Link } from "react-router-dom";
 interface IProductCardProps {
+  id: string;
   src?: string;
   alt?: string;
-  loading?: 'lazy' | 'eager';
+  loading?: "lazy" | "eager";
   productTitleStyle?: string;
   productTitle: string;
   badgeTitle: string;
@@ -14,6 +16,7 @@ interface IProductCardProps {
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({
+  id,
   src,
   alt,
   loading,
@@ -23,24 +26,47 @@ const ProductCard: React.FC<IProductCardProps> = ({
   padding,
   fontSize,
 }) => {
-  
-  const [favorite, setFavorite] = useState(false);
-  const handleFavoriteClick = () =>{
+  const { favoriteProductsId, addToFavorites, removeFromFavorites } =
+    useFavoritesStore();
+  const [favorite, setFavorite] = useState(favoriteProductsId.includes(id));
+  const handleFavoriteClick = () => {
     setFavorite(!favorite);
+
+    if (favorite) {
+      addToFavorites(id);
+    } else {
+      removeFromFavorites(id);
+    }
   };
 
   return (
-    <div className="relative flex flex-col max-w-[40.4rem] max-h-[38.6rem] gap-4 justify-between items-center">
-      <img className="relative w-full object-contain max-h-[34.6rem] rounded-md" src={src} alt={alt}
-      loading={loading}/>
-      <div className="absolute top-6 right-6" onClick={handleFavoriteClick}>{favorite ? <IoMdHeart className="text-[#DB2777]"/> : <IoMdHeartEmpty /> }</div>
+    <div className="relative max-w-[40.4rem] max-h-[38.6rem]">
+      <div className="absolute z-10 top-6 right-6" onClick={handleFavoriteClick}>
+        {favorite ? (
+          <IoMdHeart className="text-primary-main text-3xl cursor-pointer" />
+        ) : (
+          <IoMdHeartEmpty className="text-3xl cursor-pointer"/>
+        )}
+      </div>
+    <Link
+      to={`/product/${id}`}
+      className="flex flex-col w-full h-full gap-4 justify-between items-center"
+    >
+      <img
+        className="w-full object-contain max-h-[34.6rem] rounded-md"
+        src={src}
+        alt={alt}
+        loading={loading}
+      />
       <div className="flex flex-row justify-between items-center w-full h-[2.4rem]">
         <p className={productTitleStyle}>{productTitle}</p>
         <Badge padding={padding} fontSize={fontSize}>
           {badgeTitle}
         </Badge>
       </div>
+    </Link>
     </div>
+
   );
 };
 

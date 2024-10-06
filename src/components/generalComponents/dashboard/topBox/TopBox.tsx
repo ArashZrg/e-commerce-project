@@ -1,55 +1,87 @@
 import ProductCard from "../../../common/productCard/ProductCard"
 import Slider from "./slider/Slider"
-import photo from "./iphone-14-pro-model-unselect-gallery-1-202209.png"
-import photo2 from "./Link → refurb-iphone-14-pro-spaceblack-202404.png"
+import productService from "../../../../services/productService"
+import { useEffect, useState } from "react"
 
-const items = [
-  {
-    src: photo,
-    productTitle : "Apple iPhone 14 Pro 1",
-    productPrice : "۱۰,۰۰۰ تومان",
-    productDescription : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-  },
-  {
-    src: photo2,
-    productTitle : "Apple iPhone 14 Pro 2",
-    productPrice : "۱۰,۰۰۰ تومان",
-    productDescription : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-  },
-  {
-    src: photo,
-    productTitle : "Apple iPhone 14 Pro 3",
-    productPrice : "۱۰,۰۰۰ تومان",
-    productDescription : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-  },
-  {
-    src: photo2,
-    productTitle : "Apple iPhone 14 Pro 4",
-    productPrice : "۱۰,۰۰۰ تومان",
-    productDescription : "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد."
-  },
-]
+interface INewProduct {
+  id: string,
+  src: string,
+  productTitle: string,
+  productPrice: number,
+  productDescription: string,
+}
 
-const TopBox = () => {
+interface Review {
+  name: string;
+  rating: number;
+  comment: string;
+  user: string;
+  _id: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface IProduct {
+  _id: string;
+  name: string;
+  image: string;
+  quantity: number;
+  category: {
+    _id: string;
+    name: string;
+    __v: number;
+  };
+  description: string;
+  rating: number;
+  numReviews: number;
+  price: number;
+  countInStock: number;
+  reviews: Review[];
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+}
+
+const TopBox : React.FC = () => {
+  const [newProducts, setNewProducts] = useState<INewProduct[]>([])
+
+  useEffect(() => {
+    fetchProducts()
+  },[])
+
+  async function fetchProducts() {
+    const response = await productService.getAllProducts()
+    const lastFourNewProducts = response.splice(-4)
+    const UpdatedNewProducts = lastFourNewProducts.map((product : IProduct) : INewProduct => ({
+      id: product._id,
+      src: product.image,
+      productTitle: product.name,
+      productPrice: product.price,
+      productDescription: product.description,
+    }))
+    setNewProducts(UpdatedNewProducts)
+  }
+
   return (
     <div className="flex gap-[10rem] py-[1.7rem]">
       <div className="w-[45%] grid grid-cols-2 grid-rows-2 gap-[3.2rem]">
-          {items.map((item, index) => {
+          {newProducts.map((product) => {
               return (
                   <ProductCard 
-                  key={index}
-                  src={item.src}
-                  alt={item.productTitle}
-                  productTitle={item.productTitle} 
-                  productTitleStyle="text-text-primary text-[1.1rem] text-normal"
-                  badgeTitle={item.productPrice}
-                  padding="px-2"
-                  fontSize="text-[1.1rem]"
+                    id={product.id}
+                    key={product.id}
+                    src={product.src}
+                    alt={product.productTitle}
+                    productTitle={product.productTitle} 
+                    productTitleStyle="text-text-primary text-[1.1rem] text-normal"
+                    badgeTitle={product.productPrice.toString()}
+                    padding="px-2"
+                    fontSize="text-[1.1rem]"
                   />
               )
           })}
       </div>
-      <Slider items={items} />
+      <Slider items={newProducts} />
     </div>
   )
 }

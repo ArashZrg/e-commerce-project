@@ -45,7 +45,11 @@ const routes: RouteObject[] = [
         element: <MyOrdersPage />,
       },
       {
-        path: "/detail",
+        path: "/detail/:id",
+        element: <DetailsPage />,
+      },
+      {
+        path: `/detail/deliverd/:id`,
         element: <DetailsPage />,
       },
       {
