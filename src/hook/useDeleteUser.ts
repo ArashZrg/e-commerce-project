@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export const useDeleteUser = () => {
   const navigate = useNavigate();
   return useMutation(authService.deleteUserById, {
-    onSuccess: () => {
+    onSuccess: () => { 
       setTimeout(() => {
         navigate("/users");
       }, 1000);
