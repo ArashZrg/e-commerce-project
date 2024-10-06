@@ -8,7 +8,7 @@ import { IoMdClose } from "react-icons/io";
 
 const UsersList = () => {
   const headers = ["ID", "نام", "ایمیل", "ادمین", "عملیات"];
-  const [users, setUsers] = useState<IUserListType[]>();
+  const [users,  setUsers] = useState<IUserListType[]>();
 
   const mapUserData = (user: IUserType): IUserListType => ({
     ID: user._id,
