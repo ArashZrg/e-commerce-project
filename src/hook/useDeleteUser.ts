@@ -8,7 +8,7 @@ export const useDeleteUser = () => {
   return useMutation(authService.deleteUserById, {
     onSuccess: () => {
       setTimeout(() => {
-        navigate("/users");
+        navigate("/users"); 
       }, 1000);
     },
     onError: (error) => {
