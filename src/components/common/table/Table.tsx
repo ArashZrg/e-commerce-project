@@ -23,7 +23,7 @@ const Table = ({
 }: ITableProps) => {
   return (
     <table className={`${optionalWidth} ${optionalHeight} w-full`}>
-      <thead className="border-b-2 font-normal text-[1.6rem] text-text-primary font-Iran-Yekan">
+      <thead className="border-b-2 dark:border-dark-base-text-field-stroke font-normal text-[1.6rem] text-text-primary dark:text-dark-text-primary font-Iran-Yekan">
         <tr>
           {headers.map((head, index) => (
             <th
@@ -39,7 +39,7 @@ const Table = ({
         {items?.map((item, index) => (
           <tr
             key={index}
-            className="font-Iran-Yekan font-normal text-[1.6rem] text-text-primary"
+            className="font-Iran-Yekan font-normal text-[1.6rem] text-text-primary dark:text-dark-text-primary"
           >
             {headers.map((head, headIndex) => (
               <td

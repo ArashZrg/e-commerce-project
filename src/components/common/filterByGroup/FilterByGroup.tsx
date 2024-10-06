@@ -58,8 +58,8 @@ const FilterByGroup: React.FC<IFilterByGroup> = ({
   }, [selectedCategories, products]);
 
   return (
-    <div className="flex flex-col items-start">
-      <div className="bg-white text-black w-[24rem] h-[4rem] rounded-full flex justify-center items-center px-[5.2rem] py-1 mb-8">
+    <div className="flex flex-col items-start dark:bg-dark-base-side">
+      <div className="bg-white dark:bg-dark-base-menu text-black dark:text-dark-text-primary w-[24rem] h-[4rem] rounded-full flex justify-center items-center px-[5.2rem] py-1 mb-8">
         فیلتر دسته بندی
       </div>
       {categories.map((category, index) => (

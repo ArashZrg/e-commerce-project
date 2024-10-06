@@ -56,13 +56,13 @@ const Product: React.FC = () => {
           className="w-[45%] h-full"
         />
         <div className=" w-[55%] h-full flex flex-col px-28 justify-between ">
-          <p className="font-Iran-Yekan font-medium text-[2.4rem] text-text-primary text-right">
+          <p className="font-Iran-Yekan font-medium text-[2.4rem] text-text-primary dark:text-dark-text-primary text-right">
             {selectProduct.name}
           </p>
-          <p className="text-text-primary font-normal text-[1.6rem] text-right">
+          <p className="text-text-primary dark:text-dark-text-primary font-normal text-[1.6rem] text-right">
             {selectProduct.description}
           </p>
-          <p className="text-text-primary text-right text-[4.8rem] font-medium font-Iran-Yekan">
+          <p className="text-text-primary dark:text-dark-text-primary text-right text-[4.8rem] font-medium font-Iran-Yekan">
             {selectProduct.price}
           </p>
           <div className="flex justify-between items-center font-normal text-[1.6rem]">
@@ -124,7 +124,7 @@ const Product: React.FC = () => {
               <FaStar></FaStar>
               <FaStar></FaStar>
             </div>
-            <select className="w-[9.6rem] h-[4rem] rounded-[0.8rem] p-[0.8rem] text-[1.6rem]">
+            <select className="w-[9.6rem] h-[4rem] rounded-[0.8rem] p-[0.8rem] text-[1.6rem] dark:bg-dark-base-text-field dark:border dark:border-dark-base-text-field-stroke">
               <option value="1">1</option>
             </select>
           </div>

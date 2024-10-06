@@ -12,10 +12,10 @@ const Cart = () => {
           <CardInfo />
         </div>
         <div className=" w-[50%] h-[40%] flex flex-col justify-between">
-          <p className="text-[2rem] font-medium font-Iran-Yekan text-text-primary">
+          <p className="text-[2rem] font-medium font-Iran-Yekan text-text-primary dark:text-dark-text-primary">
             تعداد (3)
           </p>
-          <p className="font-Iran-Yekan text-text-primary text-[2.4rem]">
+          <p className="font-Iran-Yekan text-text-primary dark:text-dark-text-primary text-[2.4rem]">
             10،000تومان
           </p>
           <Button className="bg-primary-main rounded-full text-text-button font-bold text-[2rem] py-3">

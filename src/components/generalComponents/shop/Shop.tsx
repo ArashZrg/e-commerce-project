@@ -94,7 +94,7 @@ const Shop: React.FC = () => {
   return (
     <main className="w-full h-full justify-center  flex ">
       <section className="w-[122rem] h-[60rem]  flex flex-row justify-start items-center mt-14 gap-24">
-        <section className="flex flex-col justify-start items-center h-full bg-base-side w-[27rem]">
+        <section className="flex flex-col justify-start items-center h-full bg-base-side dark:bg-dark-base-side w-[27rem]">
           <div className="w-[25rem]  text-[1.6rem] leading-10  font-normal gap-16 flex flex-col pt-5 justify-center items-center">
             <FilterByGroup
               categories={categories}
@@ -104,12 +104,12 @@ const Shop: React.FC = () => {
               setClear={setClear}
             />
             <div className="flex flex-col items-center justify-center gap-3">
-              <div className="bg-white flex text-text-primary  text-[1.6rem] leading-10  font-normal w-[24rem] h-[4rem] rounded-full  justify-center items-center  py-1 mb-8">
+              <div className="bg-white dark:bg-dark-base-menu flex text-text-primary dark:text-dark-text-primary  text-[1.6rem] leading-10  font-normal w-[24rem] h-[4rem] rounded-full  justify-center items-center  py-1 mb-8">
                 فیلتر قیمت
               </div>
               <Input
                 inputStyle={
-                  "w-80 h-16 text-[1.4rem] leading-8 font-normal text-text-secondary rounded-xl border-gray-200 px-5 py-4 border"
+                  "w-80 h-16 dark:bg-white text-[1.4rem] leading-8 font-normal text-text-secondary rounded-xl border-gray-200 px-5 py-4 border"
                 }
                 labelStyle={"hidden"}
                 placeholder="قیمت را وارد نمایید"

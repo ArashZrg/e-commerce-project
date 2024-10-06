@@ -41,53 +41,53 @@ const Slider : React.FC<ISliderProps> = ( {items} ) => {
                     <img src={item.src} alt={item.productTitle} className="aspect-video rounded-[0.8rem] object-cover" />
                     <div className="w-full flex gap-[3.2rem]">
                         <div className="flex flex-col w-[45%] text-[1.2rem] text-text-primary">
-                            <h4>{item.productTitle}</h4>
-                            <span className="self-end">
+                            <h4 className="dark:text-dark-text-primary">{item.productTitle}</h4>
+                            <span className="self-end dark:text-dark-text-primary">
                                 {item.productPrice}
                             </span>
-                            <p className="line-clamp-4 pt-[2.4rem]">{item.productDescription}</p>
+                            <p className="dark:text-dark-text-primary line-clamp-4 pt-[2.4rem]">{item.productDescription}</p>
                         </div>
                         <div className="w-[55%] grid grid-flow-col grid-cols-auto grid-rows-3     items-start">
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaStar className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     امتیاز : 
-                                    <span className="text-text-primary"> 5</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary"> 5</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaShoppingCart className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     تعداد : 
-                                    <span className="text-text-primary" > 52</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" > 52</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaBox className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     موجودی : 
-                                    <span className="text-text-primary"> 10</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary"> 10</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <AiFillShop className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     برند : 
-                                    <span className="text-text-primary" > اپل</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" > اپل</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaClock className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     زمان بروزرسانی : 
-                                    <span className="text-text-primary" > چند لحظه قبل</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" > چند لحظه قبل</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaStar className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     نظرات :  
-                                    <span className="text-text-primary"> ۴۲۰۲</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary"> ۴۲۰۲</span>
                                 </p>
                             </div>
                         </div>

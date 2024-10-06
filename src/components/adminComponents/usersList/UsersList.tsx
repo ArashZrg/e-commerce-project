@@ -44,9 +44,9 @@ const UsersList = () => {
       <div className=" text-base-side top-12 w-16 h-[3.8rem] mr-[95%] bg-pink-500 py-5 px-3 ">
         Admin menu
       </div>
-      <div className="bg-pink-200 w-5/6 h-96 ">
+      <div className="bg-pink-200 dark:bg-dark-base-background w-5/6 h-96 ">
         <Table headers={headers} items={users} optionalWidth="w-full" />
-        <div className="flex flex-row border ">
+        <div className="flex flex-row border  ">
           {isEditing ? (
             <div>
               <div className="w-10 h-10 bg-info-main rounded-xl text-text-button">
@@ -58,6 +58,7 @@ const UsersList = () => {
               </div>
               <input
                 type="text"
+                className="dark:bg-dark-base-text-field dark:border-dark-base-text-field-stroke"
                 value={text}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -71,7 +72,7 @@ const UsersList = () => {
                 style={{ cursor: "pointer" }}
                 size={24}
               />
-              <p>{text}</p>
+              <p className="dark:text-dark-text-primary">{text}</p>
             </div>
           )}
         </div>
