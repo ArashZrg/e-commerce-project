@@ -3,10 +3,22 @@ import { IProductType, IFilterType } from "../types/productTypes";
 
 const productService = {
     createProduct: async ({ name, description, price, category, quantity, image }: IProductType) => {
-        const response = await axiosClient.post('/products', {
-            name, description, price, category, quantity, image
-        })
-        return response.data
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("description", description);
+        formData.append("price", price.toString());
+        formData.append("category", category);
+        formData.append("quantity", quantity.toString());
+        if (image) {
+            formData.append("image", image);
+        }
+
+        const response = await axiosClient.post('/products', formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+        return response.data;
     },
 
     createReview: async (rating: number, comment: string, _id: string) => {

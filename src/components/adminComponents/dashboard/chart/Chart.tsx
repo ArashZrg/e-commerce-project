@@ -84,7 +84,8 @@ const Chart = () => {
                             stepSize: 1,
                             color: "#58616C",
                             font : {
-                                size: 16,
+                                size: 11,
+                                family: "IRAN-Yekan"
                             },
                             align: "center",
                             crossAlign: "center",
@@ -114,8 +115,10 @@ const Chart = () => {
                             stepSize: 10000000,
                             color: "#58616C",
                             font : {
-                                size: 16,
+                                size: 11,
+                                family : 'IRAN-Yekan',
                             },
+                            padding: 10,
                             callback: function(value) {
                                 return value.toLocaleString('fa-IR'); // Format the tick labels
                             }

@@ -6,7 +6,7 @@ const AdminMenu = () => {
   const [isChecked, setIsChecked] = useState(false);
   const AdminMenuList = [
     { label: "داشبورد", linkTo: "/adminDashboard" },
-    { label: "محصول جدید", linkTo: "" },
+    { label: "محصول جدید", linkTo: "/create-product" },
     { label: "مدیریت کاربران", linkTo: "/users" },
     { label: "سفارشات", linkTo: "/orders" },
   ];

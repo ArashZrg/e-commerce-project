@@ -9,7 +9,7 @@ interface ILikceIcon {
 const LikeIcon: React.FC<ILikceIcon> = ({ handleLikeIcon, isLiked }) => {
   return (
     <>
-      {isLiked ? (
+      {!isLiked ? (
         <FaRegHeart
           onClick={handleLikeIcon}
           className="absolute left-[7.6rem] top-[10.3rem] text-4xl cursor-pointer"

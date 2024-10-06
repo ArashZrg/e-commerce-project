@@ -6,7 +6,7 @@ interface IInputProps {
   type?: string;
   placeholder?: string;
   label?: string | JSX.Element;
-  id: string;
+  id?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   onFocus?: FocusEventHandler<HTMLInputElement>;

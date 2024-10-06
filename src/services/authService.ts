@@ -1,5 +1,6 @@
+// import { isAdmin } from './../stores/adminStore';
 import axiosClient from "../api/axiosClient";
-import { ILoginType, IRegisterType, IUpdateUser } from '../types/authTypes'
+import { ILoginType, IRegisterType, IUpdateUser, IUser } from '../types/authTypes'
 import { setIsAdmin } from "../stores/adminStore";
 
 const authService = {
@@ -56,6 +57,15 @@ const authService = {
             username,
             email,
             password,
+        });
+        return response.data;
+    },
+    // Update User
+    updateUser: async (id: string,{ username, email, isadmin }: IUser) => {
+        const response = await axiosClient.put(`/users/${id}`, {
+            username,
+            email,
+            isadmin,
         });
         return response.data;
     },

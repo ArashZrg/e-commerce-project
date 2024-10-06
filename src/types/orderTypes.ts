@@ -13,6 +13,7 @@ export interface IShippingAddress {
 }
 
 interface IOrderItemsResponse {
+    image: string,
     name: string,
     qty: number,
     price : number,

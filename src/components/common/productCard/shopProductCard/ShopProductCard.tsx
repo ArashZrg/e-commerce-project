@@ -5,6 +5,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GoArrowLeft } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import LikeIcon from "../../../generalComponents/product/likeIcon/LikeIcon";
+import { useFavoritesStore } from "../../../../stores/favoritesStore";
 
 interface IProductCard {
   id: string;
@@ -27,16 +28,24 @@ const ShopProductCard: React.FC<IProductCard> = ({
   flexOptional,
   heightOptional,
 }) => {
-  const [isLiked, setIsLiked] = useState(true);
+  const { favoriteProductsId, addToFavorites, removeFromFavorites } = useFavoritesStore()
+  const [isLiked, setIsLiked] = useState(favoriteProductsId.includes(id));
   const navigate = useNavigate();
 
   const shiftToSelected = () => {
-    navigate("/product", { state: { id } });
+    navigate(`/product/${id}`);
   };
-
+  
   const handleLikeIcon = () => {
+    if (isLiked) {
+        removeFromFavorites(id);
+    } else {
+        addToFavorites(id);
+    }
+    
     setIsLiked(!isLiked);
   };
+  
   return (
     <div
       className={`rounded-3xl flex ${flexOptional} w-full ${heightOptional} justify-between items-center`}

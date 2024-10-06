@@ -17,3 +17,8 @@ export interface IUpdateUser {
     email: string,
     password?: string
 }
+export interface IUser {
+    username?: string,
+    email?: string,
+    isadmin?: boolean,
+}

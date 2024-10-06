@@ -13,6 +13,7 @@ import {
   HomePage,
   NotFoundPage,
 } from "../pages/index/pages";
+import CreateProductPage from "../pages/createProductPage/CreateProductPage";
 
 const routes: RouteObject[] = [
   {
@@ -25,7 +26,7 @@ const routes: RouteObject[] = [
         element: <DashBoardPage />,
       },
       {
-        path: "/checkout",
+        path: "/checkout/:id",
         element: <CheckoutPage />,
       },
       {
@@ -45,7 +46,11 @@ const routes: RouteObject[] = [
         element: <MyOrdersPage />,
       },
       {
-        path: "/detail",
+        path: "/detail/:id",
+        element: <DetailsPage />,
+      },
+      {
+        path: `/detail/deliverd/:id`,
         element: <DetailsPage />,
       },
       {
@@ -59,6 +64,10 @@ const routes: RouteObject[] = [
       {
         path: "/adminDashboard",
         element: <AdminDashboardPage />,
+      },
+      {
+        path: "/create-product",
+        element: <CreateProductPage />,
       },
     ],
   },

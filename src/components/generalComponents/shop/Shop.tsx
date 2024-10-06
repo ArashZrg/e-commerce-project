@@ -5,6 +5,7 @@ import Input from "../../common/input/Input";
 import ShopProductCard from "../../common/productCard/shopProductCard/ShopProductCard";
 import { ChangeEvent, useEffect, useState } from "react";
 import axiosClient from "../../../api/axiosClient";
+
 interface IBrand {
   name: string;
   _id: string;
@@ -32,6 +33,7 @@ const Shop: React.FC = () => {
     const res = await axiosClient.get(`/products/allproducts`);
     return res.data;
   };
+
   const fetchCategories = async () => {
     const res = await axiosClient.get(`/category/categories`);
     return res.data;
@@ -41,6 +43,7 @@ const Shop: React.FC = () => {
     queryKey: ["categories"],
     queryFn: fetchCategories,
   });
+
   const {
     isLoading,
     isError,
@@ -50,6 +53,7 @@ const Shop: React.FC = () => {
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
+
   const [filteredProducts, setFilteredProducts] = useState<IProductCard[]>([]);
   const [price, setPrice] = useState<number>(0);
   const [clear, setClear] = useState(false);

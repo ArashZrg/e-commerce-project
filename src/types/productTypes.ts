@@ -1,9 +1,9 @@
 export interface IProductType {
     name: string,
     description: string,
-    price: string,
+    price: number,
     category: string,
-    quantity: string,
+    quantity: number,
     image: string
 }
 

@@ -2,12 +2,26 @@ import { useState } from "react";
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
 import { FaStar, FaShoppingCart, FaClock, FaBox } from "react-icons/fa";
 import { AiFillShop } from "react-icons/ai";
+import { Link } from "react-router-dom";
+
+interface category {
+    _id: string;
+    name: string;
+    __v: number;
+  };
 
 interface IItem {
+    id: string,
     src: string,
     productTitle: string,
-    productPrice: string,
+    productPrice: number,
     productDescription: string,
+    category: category,
+    rating: number,
+    numReviews: number,
+    countInStock: number,
+    quantity: number,
+    updatedAt: string;
 }
 
 interface ISliderProps {
@@ -32,8 +46,9 @@ const Slider : React.FC<ISliderProps> = ( {items} ) => {
         <IoIosArrowDroprightCircle onClick={prevSlide} className="absolute text-3xl top-[50%] transform -translate-y-1/2 -right-10 cursor-pointer" />
         {items.map((item, index) => {
             return (
-                <div 
-                    key={index}    
+                <Link
+                    to={`/product/${item.id}`} 
+                    key={item.id}    
                     className={`
                         ${currentIndex === index ? "flex" : "hidden"} 
                         flex-col gap-[1.6rem]`}
@@ -47,52 +62,52 @@ const Slider : React.FC<ISliderProps> = ( {items} ) => {
                             </span>
                             <p className="dark:text-dark-text-primary line-clamp-4 pt-[2.4rem]">{item.productDescription}</p>
                         </div>
-                        <div className="w-[55%] grid grid-flow-col grid-cols-auto grid-rows-3     items-start">
+                        <div className="w-[55%] grid grid-flow-col grid-cols-auto grid-rows-3 gap-y-16 items-start">
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaStar className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     امتیاز : 
-                                    <span className="text-text-primary dark:text-dark-text-primary"> 5</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary">{item.rating}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaShoppingCart className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     تعداد : 
-                                    <span className="text-text-primary dark:text-dark-text-primary" > 52</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" >{item.quantity}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaBox className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     موجودی : 
-                                    <span className="text-text-primary dark:text-dark-text-primary"> 10</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary">{item.countInStock}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <AiFillShop className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     برند : 
-                                    <span className="text-text-primary dark:text-dark-text-primary" > اپل</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" >{item.category.name}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaClock className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     زمان بروزرسانی : 
-                                    <span className="text-text-primary dark:text-dark-text-primary" > چند لحظه قبل</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" >{new Date(item.updatedAt).toLocaleDateString('fa-IR')}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
                                 <FaStar className="text-[1.2rem]" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     نظرات :  
-                                    <span className="text-text-primary dark:text-dark-text-primary"> ۴۲۰۲</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary">{item.numReviews}</span>
                                 </p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </Link>
             )
         })}
         <IoIosArrowDropleftCircle onClick={nextSlide} className="absolute text-3xl top-[50%] transform -translate-y-1/2 -left-10 cursor-pointer" />
