@@ -27,7 +27,7 @@ const AdminMenu = () => {
               key={index}
               to={item.linkTo}
               onClick={() => handelClick()}
-              className={`transition-width duration-700 ease-in-out h-[3.7rem] gap-4 rounded-lg p-3 cursor-pointer hover:bg-[#DB277714] ${
+              className={`transition-width duration-700 ease-in-out h-[3.7rem] gap-4 rounded-lg p-3 cursor-pointer hover:bg-[#DB277714] dark:hover:bg-[#DB277714] ${
                 isChecked ? " w-full" : " w-0"
               }`}
             >

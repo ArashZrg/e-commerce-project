@@ -22,7 +22,7 @@ const Stepper = () => {
         <div className={`border w-full ${step >= 2 ? "border-success-main" : "border-text-primary"}`}></div>
         <Button onClick={() => {setStep(3)}} className="flex flex-col gap-4 items-center p-4">
             <p className={`text-[1.6rem] text-nowrap
-                    ${step === 3 ? "text-success-main" : "text-text-primar"}
+                    ${step === 3 ? "text-success-main" : "text-text-primar dark:text-dark-text-primary"}
             `}>خلاصه خرید</p>
            <IoCheckbox className={`text-[1.8rem] fill-success-main ${step === 3 ? "block" : "hidden"}`} />
         </Button>

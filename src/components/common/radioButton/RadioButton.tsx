@@ -46,7 +46,7 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
             checked = {selectedOption === option.value}
             onChange = {() => handleChange(option.value)} 
           />
-          <label className="text-text-primary text-[1.6rem]" htmlFor = {option.value}>{option.label}</label>
+          <label className="text-text-primary text-[1.6rem] dark:text-dark-text-primary" htmlFor = {option.value}>{option.label}</label>
         </div>
       ))}
     </div>

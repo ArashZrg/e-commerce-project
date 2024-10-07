@@ -135,7 +135,7 @@ const UserAddress = () => {
           )}
         </div>
         <div className="w-full flex flex-col gap-[0.8rem]">
-          <p className="text-text-secondary text-[1.6rem]">روش پرداخت</p>
+          <p className="text-text-secondary dark:text-dark-text-secondary text-[1.6rem]">روش پرداخت</p>
           <RadioButton
             name="bank"
             options={[

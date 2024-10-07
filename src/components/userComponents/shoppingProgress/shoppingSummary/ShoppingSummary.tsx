@@ -124,21 +124,21 @@ const ShoppingSummary = () => {
               headers={headers}
             />
             <div className=" h-[30rem] gap-8 w-full flex flex-col justify-between items-center">
-              <p className="w-full h-12  text-[2.4rem] leading-10  font-medium">
+              <p className="w-full h-12  text-[2.4rem] dark:text-dark-text-primary leading-10  font-medium">
                 خلاصه خرید
               </p>
-              <div className="bg-base-side w-full  flex flex-row justify-between items-center p-12 rounded-xl">
+              <div className="bg-base-side dark:bg-dark-base-text-field w-full  flex flex-row justify-between items-center p-12 rounded-xl">
                 {infoItems.map((item) => (
                   <div
                     key={item.label}
                     className="flex flex-col h-28 gap-6 justify-center items-start w-1/4"
                   >
-                    <p className="h-12  text-[2.4rem] leading-10  font-medium">
+                    <p className="h-12 dark:text-dark-text-primary text-[2.4rem] leading-10  font-medium">
                       {item.label}
                     </p>
-                    <span className="text-text-secondary text-[1.6rem] font-bold">
+                    <span className="text-text-secondary dark:text-dark-text-primary text-[1.6rem] font-bold">
                       {item.label.split(" ")[0]}:
-                      <span className="text-text-primary text-[1.6rem] font-normal">
+                      <span className="text-text-primary dark:text-dark-text-primary text-[1.6rem] font-normal">
                         {item.value}
                       </span>
                     </span>
@@ -151,8 +151,8 @@ const ShoppingSummary = () => {
                       className="w-full flex flex-row justify-between items-start  text-[1.6rem] leading-10 h-10"
                       key={label}
                     >
-                      <p className="text-text-secondary font-bold">{label} :</p>
-                      <p className="text-text-primary font-normal">{value}</p>
+                      <p className="text-text-secondary dark:text-dark-text-primary font-bold">{label} :</p>
+                      <p className="text-text-primary dark:text-dark-text-primary font-normal">{value}</p>
                     </div>
                   ))}
                 </div>
