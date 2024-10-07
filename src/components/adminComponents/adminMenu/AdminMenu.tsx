@@ -15,7 +15,7 @@ const AdminMenu = () => {
   };
   return (
     <div className={`absolute left-2 top-2 rounded-xl flex z-10`}>
-      <LogoAdminMenu handelClick={handelClick} />
+      <LogoAdminMenu handelClick={handelClick} isChecked={isChecked} />
       <div
         className={`absolute top-[2rem] w-[17rem] transition-opacity duration-500 ease-in-out bg-base-side dark:bg-dark-base-side border dark:border h-[22.8rem] border-base-text-field-stroke dark:border-dark-base-text-field-stroke py-6 px-3 gap-6 left-[2rem] rounded-xl ${
           isChecked ? "block " : "hidden"

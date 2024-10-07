@@ -120,7 +120,7 @@ const Shop: React.FC = () => {
               heightOptional="h-[34.7rem]"
               productTitle={product.name}
               productImg={product.image}
-              badgeTitle={product.price}
+              badgeTitle={`${product.price.toLocaleString('fa-IR')}`}
               brandTitle={product.category?.name}
               description={product.description}
               id={product._id}

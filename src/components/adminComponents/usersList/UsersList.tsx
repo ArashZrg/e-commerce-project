@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import Table from "../../common/table/Table";
 import { MdDeleteForever } from "react-icons/md";
-import { BiCheck } from "react-icons/bi";
 import authService from "../../../services/authService";
-import { IUserListType, IUserType } from "../../../types/userType";
-import { IoMdClose } from "react-icons/io";
+import {  IUserType } from "../../../types/userType";
 
+interface ITableItem {
+  [index: string]: string | number | boolean | JSX.Element;
+}
 const UsersList = () => {
   const headers = ["ID", "نام", "ایمیل", "ادمین", "عملیات"];
-  const [users, setUsers] = useState<IUserListType[]>();
+  const [users, setUsers] = useState<ITableItem[]>();
 
-  const mapUserData = (user: IUserType): IUserListType => ({
+  const mapUserData = (user: IUserType): ITableItem => ({
     ID: user._id,
     نام: user.username,
     ایمیل: user.email,
-    ادمین: user.isAdmin ? <BiCheck /> : <IoMdClose />,
+    ادمین: user.isAdmin ,
     عملیات: <MdDeleteForever />,
   });
 

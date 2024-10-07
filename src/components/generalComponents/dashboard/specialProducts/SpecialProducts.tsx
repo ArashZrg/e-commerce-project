@@ -29,7 +29,7 @@ const SpecialProducts = () => {
       rating: Product.rating,
       productImg: Product.image,
       productTitle: Product.name,
-      productPrice: Product.price,
+      productPrice: `${Product.price.toLocaleString('fa-IR')} تومان`,
     }))
     .sort((a:ISpecialProduct, b:ISpecialProduct) => b.rating - a.rating);
   return (
