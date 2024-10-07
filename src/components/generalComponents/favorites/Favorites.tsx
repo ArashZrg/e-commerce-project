@@ -76,7 +76,7 @@ const Favorites : React.FC = () => {
                         key={favoriteProduct._id}
                         src={favoriteProduct.image}
                         productTitle={favoriteProduct.title} 
-                        productTitleStyle="text-text-primary text-[1.8rem] text-normal"
+                        productTitleStyle="text-text-primary dark:text-white text-[1.8rem] text-normal"
                         badgeTitle={favoriteProduct.price.toString()}
                         padding="px-2.5"
                         fontSize="text-[1.2rem]"

@@ -59,7 +59,7 @@ const ProductCard: React.FC<IProductCardProps> = ({
         loading={loading}
       />
       <div className="flex flex-row justify-between items-center w-full h-[2.4rem]">
-        <p className={productTitleStyle}>{productTitle}</p>
+        <p className={`${productTitleStyle} dark:text-dark-text-primary`}>{productTitle}</p>
         <Badge padding={padding} fontSize={fontSize}>
           {badgeTitle}
         </Badge>

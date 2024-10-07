@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IoMoon, IoSunny } from "react-icons/io5";
 
 
-export const DarkToggler = () => {
+export const DarkMode = () => {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
@@ -28,8 +28,8 @@ export const DarkToggler = () => {
 
   return (
     <>
-      <button className="p-3 m-5 bg-cyan-800" onClick={() => toggleTheme()}>
-        {theme === 'light' ? <IoMoon /> : <IoSunny />}
+      <button className="p-3 m-5 bg-gray-200 dark:bg-dark-base-menu rounded-full" onClick={() => toggleTheme()}>
+        {theme === 'light' ? <IoMoon /> : <IoSunny className="text-white"/>}
       </button>
     </>
   )

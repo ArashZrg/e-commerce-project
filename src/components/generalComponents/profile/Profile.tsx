@@ -76,7 +76,7 @@ const Profile: React.FC = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="w-[64rem] gap-[1.6rem] h-[44rem] flex flex-col"
         >
-          <h1 className="font-Iran-Yekan font-medium text-[2.4rem]">
+          <h1 className="font-Iran-Yekan font-medium text-[2.4rem] dark:text-dark-text-primary">
             بروزرسانی پروفایل
           </h1>
           <div className="w-full gap-2 ">

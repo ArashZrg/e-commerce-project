@@ -27,7 +27,7 @@ const Checkbox: React.FC<ICheckboxProps> = ({
   // };
   return (
     <div className={containerStyle}>
-      <label htmlFor={label} className={labelStyle}>
+      <label htmlFor={label} className={`${labelStyle} dark:text-dark-text-primary`}>
         {label}
       </label>
       <input

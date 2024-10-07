@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { useSidebarStore } from "../../stores/sidebarStore";
 import AdminMenu from "../../components/adminComponents/adminMenu/AdminMenu";
 import { adminStore } from "../../stores/adminStore";
+import { DarkMode } from "../darkMode/DarkMode";
+
 interface IContent {
   children: ReactNode;
 }
@@ -12,11 +14,12 @@ const Content = ({ children }: IContent) => {
 
   return (
     <section
-      className={`rel w-full bg-base-backgrond min-h-screen transition-width duration-700 ease-in-out ${
+      className={`rel w-full bg-base-backgrond dark:bg-dark-base-background min-h-screen transition-width duration-700 ease-in-out ${
         !expanded ? "mr-32" : "mr-[22rem]"
       }`}
     >
       {isAdmin ? <AdminMenu /> : null}
+      <DarkMode />
       {children}
     </section>
   );

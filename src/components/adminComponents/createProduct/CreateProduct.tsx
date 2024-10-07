@@ -48,7 +48,7 @@ const CreateProduct = () => {
 
   return (
     <div className="flex flex-col justify-start items-start w-[70%] mx-auto my-[10.6rem] gap-[3.2rem]">
-      <p className="text-text-primary  text-2xl font-medium mb-12">
+      <p className="text-text-primary dark:text-dark-text-primary text-2xl font-medium mb-12">
         محصول جدید
       </p>
       <form
@@ -73,7 +73,7 @@ const CreateProduct = () => {
           />
           <label
             htmlFor="image"
-            className=" flex flex-row justify-center items-center w-full bg-white h-[12.4rem] border border-gray-300  border-dashed text-text-secondary text-center rounded-md"
+            className=" flex flex-row justify-center items-center w-full bg-white dark:bg-dark-base-text-field h-[12.4rem] border dark:border-dashed border-gray-300 dark:border-dark-base-text-field-stroke border-dashed text-text-secondary dark:text-dark-text-secondary text-center rounded-md"
           >
             آپلود عکس
           </label>
@@ -85,7 +85,7 @@ const CreateProduct = () => {
             placeholder="نام محصول را وارد نمایید"
             label="نام"
             inputStyle="block w-full rounded-xl p-4 text-right bg-white text-black block border border-base-text-field-stroke"
-            labelStyle=" text-black text-2xl block mb-5 w-full"
+            labelStyle=" text-black text-2xl block mb-5 w-full dark:text-dark-text-primary"
           />
         </div>
         <div className="flex justify-between items-center gap-5 ">
@@ -96,7 +96,7 @@ const CreateProduct = () => {
               placeholder="قیمت محصول را وارد نمایید"
               label="قیمت"
               inputStyle="bg-white w-full px-[0.9rem] py-[1rem] rounded-xl text-[1.6rem] border border-base-text-field-stroke"
-              labelStyle="block text-[1.6rem] pb-3 pt-3"
+              labelStyle="block text-[1.6rem] pb-3 pt-3 dark:text-dark-text-primary"
             />
           </div>
           <div className="w-[50%]">
@@ -106,14 +106,14 @@ const CreateProduct = () => {
               placeholder="برند محصول را وارد نمایید"
               label="برند"
               inputStyle="bg-white w-full px-[0.9rem] py-[1rem] rounded-xl text-[1.6rem] border border-base-text-field-stroke"
-              labelStyle="block text-[1.6rem] pb-3 pt-3"
+              labelStyle="block text-[1.6rem] pb-3 pt-3 dark:text-dark-text-primary"
             />
           </div>
         </div>
         <div className="h-[17.5rem] w-full">
           <label
             htmlFor="info"
-            className=" text-black text-2xl block mb-5 w-full"
+            className=" text-black text-2xl block mb-5 w-full dark:text-dark-text-primary"
           >
             توضیحات
           </label>
@@ -121,21 +121,21 @@ const CreateProduct = () => {
             {...register("description")}
             id="info"
             placeholder="توضیحات محصول را وارد نمایید"
-            className="w-full rounded-xl h-[14rem] p-4 text-right bg-white text-black block resize-none border border-base-text-field-stroke"
+            className="w-full rounded-xl h-[14rem] p-4 text-right bg-white dark:bg-dark-base-text-field text-black dark:text-dark-text-primary block resize-none border dark:border border-base-text-field-stroke dark:border-dark-base-text-field-stroke"
           ></textarea>
         </div>
         <div className="flex flex-row-reverse justify-between items-center gap-10">
           <div className="flex flex-col w-[50%] gap-5">
             <label
               htmlFor="select"
-              className=" text-text-primary text-[1.6rem] block"
+              className=" text-text-primary text-[1.6rem] block dark:text-dark-text-primary"
             >
               موجودی
             </label>
             <select
               {...register("quantity")}
               id="select"
-              className="w-full text-right bg-base-text-field text-text-secondary p-4 text-[1.6rem] rounded-[0.8rem] border border-base-text-field-stroke"
+              className="w-full text-right bg-base-text-field dark:bg-dark-base-text-field text-text-secondary dark:text-dark-text-secondary p-4 text-[1.6rem] rounded-[0.8rem] border dark:border border-base-text-field-stroke dark:border-dark-base-text-field-stroke"
             >
               <option value="موجودی" disabled>
                 موجودی
@@ -159,7 +159,7 @@ const CreateProduct = () => {
               placeholder="تعداد قابل خرید را وارد نمایید"
               label="تعداد قابل خرید"
               inputStyle="w-full text-right bg-base-text-field text-text-secondary p-4 text-[1.6rem] rounded-[0.8rem] border border-base-text-field-stroke"
-              labelStyle="text-text-primary text-[1.6rem] block"
+              labelStyle="text-text-primary text-[1.6rem] block dark:text-dark-text-primary"
             />
           </div>
         </div>

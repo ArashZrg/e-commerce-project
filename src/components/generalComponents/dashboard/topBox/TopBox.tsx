@@ -89,7 +89,7 @@ const TopBox : React.FC = () => {
                     src={product.src}
                     alt={product.productTitle}
                     productTitle={product.productTitle} 
-                    productTitleStyle="text-text-primary text-[1.1rem] text-normal"
+                    productTitleStyle="text-text-primary dark:text-white text-[1.1rem] text-normal"
                     badgeTitle={product.productPrice.toString()}
                     padding="px-2"
                     fontSize="text-[1.1rem]"

@@ -35,7 +35,7 @@ const SpecialProducts = () => {
   return (
     <div className="flex flex-col gap-y-24">
       <div className="flex justify-between items-center h-28">
-        <p className="font-normal text-[4rem] text-text-primary">
+        <p className="font-normal text-[4rem] text-text-primary dark:text-dark-text-primary">
           محصولات ویژه
         </p>
         <NavLink to="/shop">
