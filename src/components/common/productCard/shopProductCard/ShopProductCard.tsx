@@ -6,6 +6,8 @@ import { GoArrowLeft } from "react-icons/go";
 import { useNavigate } from "react-router-dom";
 import LikeIcon from "../../../generalComponents/product/likeIcon/LikeIcon";
 import { useFavoritesStore } from "../../../../stores/favoritesStore";
+import CartStore from "../../../../stores/cartStore";
+import toast, { Toaster } from "react-hot-toast";
 
 interface IProductCard {
   id: string;
@@ -30,6 +32,8 @@ const ShopProductCard: React.FC<IProductCard> = ({
 }) => {
   const { favoriteProductsId, addToFavorites, removeFromFavorites } = useFavoritesStore()
   const [isLiked, setIsLiked] = useState(favoriteProductsId.includes(id));
+  const addItem = CartStore((state) => state.addItem);
+
   const navigate = useNavigate();
 
   const shiftToSelected = () => {
@@ -45,8 +49,20 @@ const ShopProductCard: React.FC<IProductCard> = ({
     
     setIsLiked(!isLiked);
   };
-  
+  const handleClick = () => {
+   try{
+     addItem(id);
+     toast.success("محصول به سبد خرید شما اضافه شد")
+
+   }catch(error){
+    toast.error("لطفا مجدد تلاش کنید")
+
+
+   }
+  };
   return (
+    <>
+    <Toaster/>
     <div
       className={`rounded-3xl flex ${flexOptional} w-full ${heightOptional} justify-between items-center`}
     >
@@ -82,17 +98,18 @@ const ShopProductCard: React.FC<IProductCard> = ({
         <div className="h-20 w-[90%] pt-5 flex-row flex justify-between">
           <Button
             onClick={shiftToSelected}
-            className="w-[45%] h-14 rounded-xl text-text-button px-5 py-3 bg-primary-main font-normal text-lg text-center flex flex-row justify-center items-center"
-          >
+            className="w-[45%] h-14 rounded-xl  text-text-button px-5 py-3 bg-primary-main font-normal text-lg text-center flex flex-row justify-center items-center"
+            >
             مشاهده بیشتر
             <span>
               <GoArrowLeft />
             </span>
           </Button>
-          <AiOutlineShoppingCart size={30} className="dark:text-dark-text-primary"/>
+          <AiOutlineShoppingCart size={30} onClick={handleClick} className="cursor-pointer dark:text-dark-text-primary" />
         </div>
       </div>
     </div>
+  </>
   );
 };
 

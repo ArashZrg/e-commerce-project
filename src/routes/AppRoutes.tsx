@@ -12,6 +12,7 @@ import {
   AdminDashboardPage,
   HomePage,
   NotFoundPage,
+  AllProductsPage,
 } from "../pages/index/pages";
 import CreateProductPage from "../pages/createProductPage/CreateProductPage";
 
@@ -68,6 +69,10 @@ const routes: RouteObject[] = [
       {
         path: "/create-product",
         element: <CreateProductPage />,
+      },
+      {
+        path: "/allProducts",
+        element: <AllProductsPage />,
       },
     ],
   },

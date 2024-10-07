@@ -3,6 +3,7 @@ import Button from "../../common/button/Button";
 import CartStore from "../../../stores/cartStore";
 import { useEffect, useState } from "react";
 import productService from "../../../services/productService";
+import { useNavigate } from "react-router-dom";
 interface Product {
   _id: string;
   name: string;
@@ -37,6 +38,7 @@ interface Review {
 const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const cartItems = CartStore((state) => state.cartItems);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -52,6 +54,10 @@ const Cart = () => {
       setProducts([]);
     }
   }, [cartItems]);
+
+  const handleClick = () => {
+    navigate("/shoppingProgress");
+  };
 
   return (
     <div className="h-full flex justify-center items-center">
@@ -76,7 +82,10 @@ const Cart = () => {
             {products.reduce((total, product) => total + product.price, 0)}{" "}
             تومان
           </p>
-          <Button className="bg-primary-main rounded-full text-text-button font-bold text-[2rem] py-3">
+          <Button
+            onClick={handleClick}
+            className="bg-primary-main rounded-full text-text-button font-bold text-[2rem] py-3"
+          >
             تکمیل خرید
           </Button>
         </div>

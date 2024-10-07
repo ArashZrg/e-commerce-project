@@ -4,22 +4,10 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import orderService from "../../../services/orderService";
 import { adminStore } from "../../../stores/adminStore";
-
-interface IInformation {
-  _id: string;
-  name: string;
-  email: string;
-  address: string;
-  shippingPrice: number;
-  taxPrice: number;
-  totalPrice: number;
-}
+import { IInformation } from "../../../types/orderTypes";
+import { IItem } from "../../../types/orderTypes";
 
 const headers = ["عکس", "نام محصول", "تعداد", "قیمت", "قیمت نهایی"];
-
-interface ITableItem {
-  [index: string]: string | number | boolean | JSX.Element;
-}
 
 const Checkout = () => {
   const [information, setInformation] = useState<IInformation>({
@@ -31,7 +19,7 @@ const Checkout = () => {
     taxPrice: 0,
     totalPrice: 0,
   });
-  const [items, setItems] = useState<ITableItem[]>([]);
+  const [items, setItems] = useState<IItem[]>([]);
   const [status, setStatus] = useState<string>("");
   const { id } = useParams();
   const isAdmin = adminStore((state) => state.isAdmin);
@@ -49,7 +37,7 @@ const Checkout = () => {
         totalPrice: res.totalPrice,
       });
 
-      const filter = res.orderItems.map((item: ITableItem) => {
+      const filter = res.orderItems.map((item: IItem) => {
         return {
           عکس: "sdfsdf",
           "نام محصول": item.name,
@@ -65,7 +53,6 @@ const Checkout = () => {
     if (id) {
       fetchDetails();
     }
-    console.log(location.pathname);
   }, [id]);
 
   const condition = () => {

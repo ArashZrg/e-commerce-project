@@ -5,28 +5,8 @@ import Input from "../../common/input/Input";
 import ShopProductCard from "../../common/productCard/shopProductCard/ShopProductCard";
 import { ChangeEvent, useEffect, useState } from "react";
 import axiosClient from "../../../api/axiosClient";
+import { IProductCard } from "../../../types/productTypes";
 
-interface IBrand {
-  name: string;
-  _id: string;
-  __v: number;
-}
-interface IProductCard {
-  _id: string;
-  image: string;
-  name: string;
-  price: number;
-  category?: IBrand[];
-  description: string;
-  quantity: number;
-  rating: number;
-  numReviews: number;
-  countInStock: number;
-  reviews: [];
-  createdAt: string;
-  updatedAt: string;
-  __v: number;
-}
 
 const Shop: React.FC = () => {
   const fetchProducts = async () => {

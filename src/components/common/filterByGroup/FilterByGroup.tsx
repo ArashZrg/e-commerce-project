@@ -38,7 +38,7 @@ const FilterByGroup: React.FC<IFilterByGroup> = ({
 }) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   function toggleCategorySelection(categoryId: string): void {
-    setClear(false);
+    setClear?.(false);
     setSelectedCategories((prev) => {
       return prev.includes(categoryId)
         ? prev.filter((cat) => cat !== categoryId)
@@ -58,21 +58,23 @@ const FilterByGroup: React.FC<IFilterByGroup> = ({
   }, [selectedCategories, products]);
 
   return (
-    <div className="flex flex-col items-start dark:bg-dark-base-side">
+    <div className="flex flex-col items-start h-96 dark:bg-dark-base-side">
       <div className="bg-white dark:bg-dark-base-menu text-black dark:text-dark-text-primary w-[24rem] h-[4rem] rounded-full flex justify-center items-center px-[5.2rem] py-1 mb-8">
         فیلتر دسته بندی
       </div>
+      <div className=" h-3/4 overflow-y-auto w-full">
       {categories.map((category, index) => (
         <Checkbox
-          key={index}
-          label={category.name}
-          checked={
-            isClear ? !isClear : selectedCategories.includes(category._id)
-          }
-          onChange={() => toggleCategorySelection(category._id)}
-          containerStyle="flex flex-row-reverse justify-end gap-2 my-3 mx-8"
+        key={index}
+        label={category.name}
+        checked={
+          isClear ? !isClear : selectedCategories.includes(category._id)
+        }
+        onChange={() => toggleCategorySelection(category._id)}
+        containerStyle="flex flex-row-reverse justify-end gap-2 my-3 mx-8"
         />
       ))}
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import { IoEnterOutline } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   AiOutlineShopping,
   AiOutlineHome,
@@ -20,13 +20,15 @@ import { useAuthStatus } from "../../stores/authStore";
 import { adminStore } from "../../stores/adminStore";
 import { useDropDownStore } from "../../stores/dropDownStore";
 import UserDropDown from "./dropDowns/UserDropDown";
+import CartStore from "../../stores/cartStore";
 
 const SideMenu = () => {
   const { expanded, setExpanded } = useSidebarStore();
   const { dropDown, setDropDown } = useDropDownStore();
   const { isAuth } = useAuthStatus();
   const { isAdmin } = adminStore();
-  const [countOfProduct] = useState<number>(2);
+  const {cartItems} = CartStore();
+  const countOfProduct = cartItems.length;
   const sideMenuitems: SlideListProps[] = [
     { icon: <AiOutlineHome size={20} />, name: "خانه", linkTo: "/dashboard" },
     { icon: <AiOutlineShopping size={20} />, name: "فروشگاه", linkTo: "/shop" },

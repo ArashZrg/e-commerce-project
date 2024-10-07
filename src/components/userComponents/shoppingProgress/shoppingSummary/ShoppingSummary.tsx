@@ -4,13 +4,21 @@ import orderService from "../../../../services/orderService";
 import { useEffect, useState } from "react";
 import { useAddressInfoStore } from "../../../../stores/shoppingProgressStore";
 import productService from "../../../../services/productService";
-import { IAddressInfoStore, IItems,IShippingAddress,IOrderItems } from "../../../../types/orderTypes";
+import {
+  IAddressInfoStore,
+  IItems,
+  IShippingAddress,
+  IOrderItems,
+} from "../../../../types/orderTypes";
 import { toast, Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import CartStore from "../../../../stores/cartStore";
 
 const ShoppingSummary = () => {
   const headers = ["عکس", "نام محصول", "تعداد", "قیمت", "قیمت نهایی"];
-  const [listOfId, setlistOfId] = useState<string[]>([]);
+  const navigate = useNavigate();
+  const { cartItems } = CartStore();
+  console.log("cartItems in shopping", cartItems);
   const [Items, setItems] = useState<IItems[]>([]);
   const [orderItems, setorderItems] = useState<IOrderItems[]>([]);
   const [travelPay] = useState(10000);
@@ -46,24 +54,21 @@ const ShoppingSummary = () => {
     const prouduct = await productService.getProduct(id);
     return prouduct;
   };
-  const getAllProducts = async () => {
-    const Order = await productService.getAllProducts();
-    setlistOfId(Order.map((e) => e._id));
-  };
 
   const getorederlist = async () => {
     try {
-      const products = await Promise.all(listOfId.map((id) => getProducts(id)));
+      const products = await Promise.all(
+        cartItems.map((id) => getProducts(id))
+      );
       const items = products.map((product) => ({
-        id: product._id,
         عکس: product.image,
         "نام محصول": product.name,
         تعداد: 1,
         قیمت: product.price,
         "قیمت نهایی": product.price * 1,
-        // تعداد: product.quantity,
-        // "قیمت نهایی": product.price * product.quantity,
       }));
+      // "قیمت نهایی": product.price * product.quantity,
+      // تعداد: product.quantity,
       const orderItems = products.map((product) => ({
         name: product.name,
         // qty: product.quantity,
@@ -76,7 +81,6 @@ const ShoppingSummary = () => {
       toast.error(`لطفا مجدد تلاش کنید! : ${error}`);
     }
   };
-  const navigate = useNavigate();
   const createOrder = async () => {
     try {
       const order = await orderService.createOrder(
@@ -87,7 +91,8 @@ const ShoppingSummary = () => {
       navigate(`/checkout/${order._id}`);
       toast.success("سفارش شما با موفقیت ثبت شد");
     } catch (error) {
-      toast.error("لطفا مجدد تلاش کنید!");
+      toast.error("لطفا مجدد تلاش کنید! ");
+      console.error(error);
     }
   };
 
@@ -100,10 +105,10 @@ const ShoppingSummary = () => {
   ];
   useEffect(() => {
     getorederlist();
-  }, [listOfId]);
+  }, [cartItems]);
 
   useEffect(() => {
-    getAllProducts();
+    getorederlist();
   }, []);
 
   return (
