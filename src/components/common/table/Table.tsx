@@ -38,7 +38,6 @@ const Table = ({
 
       onSuccess: () => {
         toast.success("حدف با موفقیت انجام شد");
-
         setTimeout(() => {
           navigate(0);
         }, 1000);
@@ -61,8 +60,50 @@ const Table = ({
                 }`}
                 key={index}
               >
-                {head}
-              </th>
+                {head === "عکس" ? (
+                  <img
+                    src={String(item[head])}
+                    alt="picture"
+                    className="w-full h-16 object-contain"
+                  ></img>
+                ) : head === "عملیات" ? (
+                  <Link
+                    to={String(item.navigate)}
+                  >
+                    <Button className="bg-primary-main px-[1.2rem] py-[0.8rem] rounded-[0.8rem] text-[1.4rem] text-text-button font-normal">
+                      {item[head]}
+                    </Button>
+                  </Link>
+                ) : head === "ارسال" ? (
+                  <Badge
+                    padding="px-2"
+                    fontSize="text-[1.4rem]"
+                    status={
+                      item[head] === "در حال ارسال"
+                        ? "pending-badge"
+                        : item[head] === "ارسال شده"
+                        ? "success-badge"
+                        : "error-badge" // if item[head] === "ارسال نشده"
+                    }
+                  >
+                    {item[head]}
+                  </Badge>
+                ) : head === "پرداخت" ? (
+                  <Badge
+                    padding="px-2"
+                    fontSize="text-[1.4rem]"
+                    status={
+                      item[head] === "پرداخت شده"
+                        ? "success-badge"
+                        : "error-badge"
+                    }
+                  >
+                    {item[head]}
+                  </Badge>
+                ) : (
+                  item[head]
+                )}
+              </td>
             ))}
           </tr>
         </thead>

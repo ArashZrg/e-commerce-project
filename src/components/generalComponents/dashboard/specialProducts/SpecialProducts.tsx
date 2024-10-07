@@ -29,7 +29,7 @@ const SpecialProducts = () => {
       rating: Product.rating,
       productImg: Product.image,
       productTitle: Product.name,
-      productPrice: `${Product.price.toLocaleString('fa-IR')} تومان`,
+      productPrice: Product.price.toLocaleString('fa-IR'),
     }))
     .sort((a:ISpecialProduct, b:ISpecialProduct) => b.rating - a.rating);
   return (
@@ -55,7 +55,7 @@ const SpecialProducts = () => {
                 productTitleStyle="text-text-primary text-[1.1rem] text-normal"
                 padding="px-2"
                 fontSize="text-[1.1rem]"
-                badgeTitle={Product.productPrice}
+                badgeTitle={Product.productPrice + " تومان"}
                 src={Product.productImg}
                 alt={Product.productTitle}
                 productTitle={Product.productTitle}

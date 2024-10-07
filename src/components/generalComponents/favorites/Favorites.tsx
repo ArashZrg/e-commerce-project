@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useFavoritesStore } from "../../../stores/favoritesStore";
 import ProductCard from "../../common/productCard/ProductCard"
 import productService from "../../../services/productService";
-import mockPhoto from "../../../assets/images/mockImage.png"
 
 interface IFavoriteProduct {
     title: string;
@@ -60,7 +59,7 @@ const Favorites : React.FC = () => {
         const updatedFavoriteProducts = response.map((product: IProduct) => ({
             title: product.name,
             price: product.price,
-            image: mockPhoto, // image: product.image,
+            image: product.image,
             _id: product._id
         }))
 
