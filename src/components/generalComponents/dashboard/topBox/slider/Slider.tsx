@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
 import { FaStar, FaShoppingCart, FaClock, FaBox } from "react-icons/fa";
@@ -56,53 +57,53 @@ const Slider : React.FC<ISliderProps> = ( {items} ) => {
                     <img src={item.src} alt={item.productTitle} className="aspect-video rounded-[0.8rem] object-cover" />
                     <div className="w-full flex gap-[3.2rem]">
                         <div className="flex flex-col w-[45%] text-[1.2rem] text-text-primary">
-                            <h4>{item.productTitle}</h4>
-                            <span className="self-end">
-                                {`${item.productPrice.toLocaleString('fa-IR')} تومان`}
+                            <h4 className="dark:text-dark-text-primary">{item.productTitle}</h4>
+                            <span className="self-end dark:text-dark-text-primary">
+                                {item.productPrice}
                             </span>
-                            <p className="line-clamp-4 pt-[2.4rem]">{item.productDescription}</p>
+                            <p className="dark:text-dark-text-primary line-clamp-4 pt-[2.4rem]">{item.productDescription}</p>
                         </div>
                         <div className="w-[55%] grid grid-flow-col grid-cols-auto grid-rows-3 gap-y-16 items-start">
                             <div className="flex gap-[0.8rem] items-center" >
-                                <FaStar className="text-[1.2rem]" />
+                                <FaStar className="text-[1.2rem] dark:text-dark-text-primary" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     امتیاز : 
-                                    <span className="text-text-primary">{item.rating}</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary">{item.rating}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
-                                <FaShoppingCart className="text-[1.2rem]" />
+                                <FaShoppingCart className="text-[1.2rem] dark:text-dark-text-primary" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     تعداد : 
-                                    <span className="text-text-primary" >{item.quantity}</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" >{item.quantity}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
-                                <FaBox className="text-[1.2rem]" />
+                                <FaBox className="text-[1.2rem] dark:text-dark-text-primary" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     موجودی : 
-                                    <span className="text-text-primary">{item.countInStock}</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary">{item.countInStock}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
-                                <AiFillShop className="text-[1.2rem]" />
+                                <AiFillShop className="text-[1.2rem] dark:text-dark-text-primary" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     برند : 
-                                    <span className="text-text-primary" >{item.category.name}</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" >{item.category.name}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
-                                <FaClock className="text-[1.2rem]" />
+                                <FaClock className="text-[1.2rem] dark:text-dark-text-primary" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     زمان بروزرسانی : 
-                                    <span className="text-text-primary" >{new Date(item.updatedAt).toLocaleDateString('fa-IR')}</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary" >{new Date(item.updatedAt).toLocaleDateString('fa-IR')}</span>
                                 </p>
                             </div>
                             <div className="flex gap-[0.8rem] items-center" >
-                                <FaStar className="text-[1.2rem]" />
+                                <FaStar className="text-[1.2rem] dark:text-dark-text-primary" />
                                 <p className="text-[1.2rem] text-text-secondary font-normal" >
                                     نظرات :  
-                                    <span className="text-text-primary">{item.numReviews}</span>
+                                    <span className="text-text-primary dark:text-dark-text-primary">{item.numReviews}</span>
                                 </p>
                             </div>
                         </div>

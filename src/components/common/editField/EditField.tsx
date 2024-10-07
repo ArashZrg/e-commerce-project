@@ -55,8 +55,7 @@ const EditField: React.FC<IEditField> = ({ title, type, userid }) => {
             toast.success("ثبت شد");
           },
           onError: (error) => {
-            toast.error("فیلتر شکن خود را خاموش کنید");
-            console.log("Register Failed :", error);
+            toast.error("عدم ارتباط با سرور! لطفا مجدد تلاش کنید");
           },
         }
       );

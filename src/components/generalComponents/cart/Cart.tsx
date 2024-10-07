@@ -75,10 +75,10 @@ const Cart = () => {
           ))}
         </div>
         <div className="w-[50%] h-[40%] flex flex-col justify-between">
-          <p className="text-[2rem] font-medium font-Iran-Yekan text-text-primary">
+          <p className="text-[2rem] font-medium font-Iran-Yekan text-text-primary dark:text-dark-text-primary">
             تعداد ({products.length})
           </p>
-          <p className="font-Iran-Yekan text-text-primary text-[2.4rem]">
+          <p className="font-Iran-Yekan text-text-primary dark:text-dark-text-primary text-[2.4rem]">
             {products.reduce((total, product) => total + product.price, 0)}{" "}
             تومان
           </p>

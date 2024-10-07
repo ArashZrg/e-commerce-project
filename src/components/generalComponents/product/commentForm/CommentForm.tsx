@@ -31,13 +31,13 @@ const CommentForm = () => {
       <div className="flex flex-col justify-center items-start gap-5">
         <label
           htmlFor="score"
-          className="text-text-primary text-[1.6rem] font-normal"
+          className="text-text-primary dark:text-dark-text-primary text-[1.6rem] font-normal"
         >
           امتیاز
         </label>
         <select
           id="score"
-          className="w-full h-14 rounded-xl px-5 outline-none border-slate-200 border-2 text-[1.6rem] font-normal"
+          className="w-full h-14 rounded-xl px-5 outline-none dark:bg-dark-base-text-field dark:border border-slate-200 dark:border-dark-base-text-field-stroke border-2 dark:text-dark-text-secondary text-[1.6rem] font-normal"
           value={selectedScore}
           onChange={(e) => setSelectedScore(e.target.value)}
         >
@@ -54,13 +54,13 @@ const CommentForm = () => {
       <div className="flex flex-col justify-center items-start gap-5">
         <label
           htmlFor="comment-area"
-          className="text-text-primary text-[1.6rem] font-normal"
+          className="text-text-primary dark:text-dark-text-primary text-[1.6rem] font-normal"
         >
           نظر
         </label>
         <textarea
           id="comment-area"
-          className="w-full h-52 rounded-xl p-5 outline-none border-slate-200 border-2 text-[1.6rem] font-normal"
+          className="w-full h-52 rounded-xl p-5 outline-none dark:bg-dark-base-text-field dark:border border-slate-200 dark:border-dark-base-text-field-stroke border-2 dark:text-dark-text-secondary resize-none text-[1.6rem] font-normal"
           placeholder="نظر خود را وارد نمایید"
           value={comment}
           onChange={(e) => setComment(e.target.value)}

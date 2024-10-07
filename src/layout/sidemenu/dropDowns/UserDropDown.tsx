@@ -34,15 +34,15 @@ const UserDropDown = ({ isAdmin }) => {
     { label: "خروج از حساب", linkTo: "", onClick: () => logout() },
   ]);
   return (
-    <div className=" absolute transition  duration-700 ease-in-out rounded-xl  bottom-[4rem] px-3 py-6 h-fit w-[17rem] text-nowrap gap-6 bg-base-side text-2xl leading-8 font-normal text-text-primary border-base-text-field-stroke flex flex-col justify-center">
+    <div className=" absolute transition  duration-700 ease-in-out rounded-xl  bottom-[4rem] px-3 py-6 h-fit w-[17rem] text-nowrap gap-6 bg-base-side dark:bg-dark-base-side text-2xl leading-8 font-normal text-text-primary dark:text-dark-text-primary border-base-text-field-stroke dark:border dark:border-dark-base-text-field-stroke flex flex-col justify-center">
       {isAdmin
         ? adminMenu.map((item, index) => (
-            <NavLink key={index} to={item.linkTo} onClick={item.onClick}>
+            <NavLink className="dark:hover:bg-[#DB277714]" key={index} to={item.linkTo} onClick={item.onClick}>
               {item.label}
             </NavLink>
           ))
         : userMenu.map((item, index) => (
-            <NavLink key={index} to={item.linkTo} onClick={item.onClick}>
+            <NavLink className="dark:hover:bg-[#DB277714]" key={index} to={item.linkTo} onClick={item.onClick}>
               {item.label}
             </NavLink>
           ))}

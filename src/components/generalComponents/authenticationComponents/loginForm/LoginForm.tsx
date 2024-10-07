@@ -39,7 +39,7 @@ const LoginForm = () => {
     <>
       <Toaster />
       <div className="flex flex-col gap-8 w-[53.1rem] h-[35.6rem] font-Iran-Yekan">
-        <h1 className="text-text-primary text-[2rem] font-bold">ورود</h1>
+        <h1 className="text-text-primary dark:text-dark-text-primary text-[2rem] font-bold">ورود</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             {...register("email", {
@@ -90,7 +90,7 @@ const LoginForm = () => {
           <Button className="flex justify-center items-center bg-primary-main w-[7.4rem] h-[4.8rem] text-white rounded-lg mt-8 text-xl px-[0.8rem] py-[2.4rem]">
             ورود
           </Button>
-          <p className="block text-[1.6rem] pb-3 pt-3 ">
+          <p className="block text-[1.6rem] pb-3 pt-3 dark:text-dark-text-primary">
             عضو نیستید؟{" "}
             <Link to="/register" className="text-pink-600">
               ثبت نام

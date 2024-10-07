@@ -8,7 +8,7 @@ const Score: React.FC<IScoreProps> = ({ count }) => {
   return (
     <div className="flex flex-row-reverse">
       {Array.from({ length: 5 }, (_, index) => (
-        <FaStar key={index} color={count > index ? "black" : "gray"} />
+        <FaStar className="dark:text-dark-text-primary " key={index} color={count > index ? "black" : "gray"} />
       ))}
     </div>
   );

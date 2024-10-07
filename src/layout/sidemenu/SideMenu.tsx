@@ -50,7 +50,7 @@ const SideMenu = () => {
 
   return (
     <aside
-      className={`h-screen  font-Iran-Yekan fixed flex justify-between bg-base-menu text-text-primary flex-col overflow-hidden transition-width duration-700 ease-in-out ${
+      className={`h-screen  font-Iran-Yekan fixed flex justify-between bg-base-menu dark:bg-dark-base-menu text-text-primary dark:text-dark-text-primary flex-col overflow-hidden transition-width duration-700 ease-in-out ${
         expanded ? "w-[22rem]" : "w-[8rem]"
       }`}
       onClick={() => setExpanded()}

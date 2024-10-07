@@ -11,7 +11,7 @@
     }
 
     body {
-        @apply font-Iran-Yekan;
+        @apply font-Iran-Yekan dark:text-dark-text-primary;
     }
 }
 

@@ -49,8 +49,8 @@ const Status: React.FC<IStatusProps> = ({
     { label: "مبلغ نهایی", value: formatPrice(information.totalPrice) },
   ];
 
-  const textStyle = "text-[1.6rem] font-normal text-text-primary py-2";
-  const boldTextStyle = "text-[1.6rem] font-bold text-text-secondary py-2";
+  const textStyle = "text-[1.6rem] font-normal text-text-primary dark:text-dark-text-primary py-2";
+  const boldTextStyle = "text-[1.6rem] font-bold text-text-secondary dark:text-dark-text-secondary py-2";
 
   const buttonCondition = () => {
     if (isAdmin) {
@@ -96,7 +96,7 @@ const Status: React.FC<IStatusProps> = ({
 
   return (
     <div className="w-[35%] h-[90%] font-Iran-Yekan">
-      <p className="font-medium text-[2rem]">آدرس دریافت</p>
+      <p className="font-medium text-[2rem] dark:text-dark-text-primary">آدرس دریافت</p>
       <div className="text-primary-main font-bold text-[1.6rem] flex flex-col gap-4 my-4">
         {infoItems.map(({ label, value }) => (
           <p key={label}>
@@ -104,10 +104,10 @@ const Status: React.FC<IStatusProps> = ({
           </p>
         ))}
       </div>
-      <div className="text-[1.6rem] font-bold text-text-primary w-full bg-base-card rounded-md pr-4 py-3">
+      <div className="text-[1.6rem] font-bold text-text-primary dark:text-dark-text-primary w-full bg-base-card dark:bg-dark-base-card rounded-md pr-4 py-3">
         {status}
       </div>
-      <p className="font-medium text-[2rem] my-4">خلاصه خرید</p>
+      <p className="font-medium text-[2rem] my-4 dark:text-dark-text-primary">خلاصه خرید</p>
       {summaryItems.map(({ label, value }) => (
         <div key={label} className="flex justify-between items-center w-full">
           <p className={boldTextStyle}>{label} :</p>
