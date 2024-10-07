@@ -121,7 +121,7 @@ const CreateProduct = () => {
             {...register("description")}
             id="info"
             placeholder="توضیحات محصول را وارد نمایید"
-            className="w-full rounded-xl h-[14rem] p-4 text-right bg-white dark:bg-dark-base-text-field text-black block resize-none border dark:border border-base-text-field-stroke dark:border-dark-base-text-field-stroke"
+            className="w-full rounded-xl h-[14rem] p-4 text-right bg-white dark:bg-dark-base-text-field text-black dark:text-dark-text-primary block resize-none border dark:border border-base-text-field-stroke dark:border-dark-base-text-field-stroke"
           ></textarea>
         </div>
         <div className="flex flex-row-reverse justify-between items-center gap-10">
