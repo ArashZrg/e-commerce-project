@@ -32,7 +32,7 @@ const CardInfo: React.FC<ICartInfoProps> = ({
         </p>
       </div>
       <div className="flex-2  flex gap-[1.6rem] pl-3 justify-center items-center h-full">
-        <select className="w-[5.2rem] h-[2.3rem] transition-transform dark:border dark:border-x-dark-base-text-field-stroke dark:rounded-lg dark:bg-dark-base-text-field">
+        <select className="w-[5.2rem] h-[2.3rem] transition-transform dark:text-dark-text-primary dark:border dark:border-dark-base-text-field-stroke dark:rounded-lg dark:bg-dark-base-text-field">
           {[...Array(optionCount).keys()].map((x) => (
             <option key={x + 1} value={x + 1}>
               {x + 1}

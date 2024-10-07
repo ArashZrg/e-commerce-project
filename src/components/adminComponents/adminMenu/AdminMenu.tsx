@@ -17,11 +17,11 @@ const AdminMenu = () => {
     <div className={`absolute left-2 top-2 rounded-xl flex z-10`}>
       <LogoAdminMenu handelClick={handelClick} />
       <div
-        className={`absolute top-[2rem] w-[17rem] transition-opacity duration-500 ease-in-out bg-base-side border  h-[22.8rem] border-base-text-field-stroke py-6 px-3 gap-6 left-[2rem] rounded-xl ${
+        className={`absolute top-[2rem] w-[17rem] transition-opacity duration-500 ease-in-out bg-base-side dark:bg-dark-base-side border dark:border h-[22.8rem] border-base-text-field-stroke dark:border-dark-base-text-field-stroke py-6 px-3 gap-6 left-[2rem] rounded-xl ${
           isChecked ? "block " : "hidden"
         } `}
       >
-        <div className="flex  flex-col gap-6 transition-width duration-700 ease-in-out justify-around items-center h-full text-text-primary text-2xl leading-8 font-normal">
+        <div className="flex flex-col gap-6 transition-width duration-700 ease-in-out justify-around items-center h-full text-text-primary dark:text-dark-text-primary text-2xl leading-8 font-normal">
           {AdminMenuList.map((item, index) => (
             <NavLink
               key={index}

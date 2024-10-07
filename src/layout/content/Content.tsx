@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { useSidebarStore } from "../../stores/sidebarStore";
 import AdminMenu from "../../components/adminComponents/adminMenu/AdminMenu";
 import { adminStore } from "../../stores/adminStore";
+import { DarkMode } from "../darkMode/DarkMode";
+
 interface IContent {
   children: ReactNode;
 }
@@ -17,6 +19,7 @@ const Content = ({ children }: IContent) => {
       }`}
     >
       {isAdmin ? <AdminMenu /> : null}
+      <DarkMode />
       {children}
     </section>
   );

@@ -90,7 +90,7 @@ const LoginForm = () => {
           <Button className="flex justify-center items-center bg-primary-main w-[7.4rem] h-[4.8rem] text-white rounded-lg mt-8 text-xl px-[0.8rem] py-[2.4rem]">
             ورود
           </Button>
-          <p className="block text-[1.6rem] pb-3 pt-3 ">
+          <p className="block text-[1.6rem] pb-3 pt-3 dark:text-dark-text-primary">
             عضو نیستید؟{" "}
             <Link to="/register" className="text-pink-600">
               ثبت نام

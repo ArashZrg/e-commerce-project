@@ -147,7 +147,7 @@ const RegisterForm = () => {
             عضویت
           </Button>
 
-          <p className="block text-[1.6rem] pb-3 pt-3 ">
+          <p className="block text-[1.6rem] pb-3 pt-3 dark:text-dark-text-primary">
             عضو هستید؟{" "}
             <Link to="/login" className="text-pink-600">
               ورود

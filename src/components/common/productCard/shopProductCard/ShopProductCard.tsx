@@ -89,7 +89,7 @@ const ShopProductCard: React.FC<IProductCard> = ({
               <GoArrowLeft />
             </span>
           </Button>
-          <AiOutlineShoppingCart size={30} />
+          <AiOutlineShoppingCart size={30} className="dark:text-dark-text-primary"/>
         </div>
       </div>
     </div>

@@ -125,7 +125,7 @@ const Shop: React.FC = () => {
               />
             </div>
             <Button
-              className="w-80 h-10 text-[1.6rem] leading-10  font-normal border border-gray-400 rounded-md  text-center"
+              className="w-80 h-10 text-[1.6rem] dark:text-dark-text-primary leading-10  font-normal border dark:border border-gray-400 rounded-md  text-center"
               children={"حذف فیلتر ها"}
               onClick={clearFilter}
             />
