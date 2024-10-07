@@ -7,7 +7,7 @@ const ShoppingProgress = () => {
   const {step} = useStepperStore()
 
   return (
-    <div className="w-fit mx-auto">
+    <div className="w-ful mx-auto">
       <Stepper />
       {step === 2 && <UserAddress />}
       {step === 3 && <ShoppingSummary />}
